@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tawana Learning - Social Links</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Nunito:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 400;
+        }
+
+        .heading-font {
+            font-family: 'Montserrat', 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .brand-font {
+            font-family: 'Space Grotesk', 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .elegant-font {
+            font-family: 'Nunito', 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+
+        .persian-font {
+            font-family: 'Vazirmatn', 'Amiri', 'Noto Naskh Arabic', sans-serif;
+            font-weight: 500;
+            line-height: 1.8;
+            letter-spacing: 0.02em;
+        }
+
+        .persian-heading {
+            font-family: 'Vazirmatn', 'Amiri', 'Noto Naskh Arabic', sans-serif;
+            font-weight: 700;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
+        }
+
+        body {
+            background: linear-gradient(135deg, #000000 0%, #dc2626 50%, #16a34a 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .floating-bg {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @media (min-width: 768px) {
+            .floating-bg {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        .floating-bg:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            background: #000000;
+            animation-delay: 0s;
+        }
+
+        .floating-bg:nth-child(2) {
+            top: 60%;
+            right: 5%;
+            background: #dc2626;
+            animation-delay: 2s;
+        }
+
+        .floating-bg:nth-child(3) {
+            bottom: 20%;
+            left: 10%;
+            background: #16a34a;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .main-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .social-card:hover .icon-glow {
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .icon-glow {
+            transition: all 0.3s ease;
+        }
+
+        .pulse-ring {
+            animation: pulse-ring 2s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2.4);
+                opacity: 0;
+            }
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Platform specific gradients */
+        .instagram-gradient { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .tiktok-gradient { background: linear-gradient(135deg, #000000 0%, #ff0050 100%); }
+        .youtube-gradient { background: linear-gradient(135deg, #ff0000 0%, #ff4500 100%); }
+        .facebook-gradient { background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%); }
+        .telegram-gradient { background: linear-gradient(135deg, #0088cc 0%, #29b6f6 100%); }
+        .website-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .notification {
+            animation: slideInRight 0.5s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Floating Background Elements -->
+    <div class="floating-bg"></div>
+    <div class="floating-bg"></div>
+    <div class="floating-bg"></div>
+
+    <!-- Grid Pattern Overlay -->
+    <div class="fixed inset-0 grid-pattern pointer-events-none"></div>
+
+    <div class="min-h-screen flex items-center justify-center p-3 sm:p-4 relative z-10">
+        <div class="w-full max-w-6xl">
+            
+            <!-- Main Container -->
+            <div class="main-container rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 slide-in">
+                
+                <!-- Profile Section -->
+                <div class="profile-section rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8 text-center slide-in" style="animation-delay: 0.2s;">
+                    <div class="relative inline-block mb-4 sm:mb-6">
+                        <div class="absolute inset-0 bg-white rounded-full pulse-ring"></div>
+                        <div class="relative w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-white text-xl sm:text-2xl font-bold shadow-2xl">
+                            TL
+                        </div>
+                    </div>
+                    <h1 class="heading-font text-2xl sm:text-3xl md:text-4xl font-bold text-white text-glow mb-3 sm:mb-4">Tawana Learning</h1>
+                    <p class="text-lg sm:text-xl text-white mb-2 px-2">💰 Learn to Make Money Online 💰</p>
+                    <p class="persian-font text-base sm:text-lg text-white mb-2 px-2" dir="rtl">💰 آنلاین پول درآوردن یاد بگیرید 💰</p>
+                    <p class="persian-font text-sm sm:text-base text-white mb-3 sm:mb-4 px-2" dir="rtl">💰 آنلاین د پیسو کمولو زده کړه وکړئ 💰</p>
+                    <div class="inline-flex items-center space-x-2 bg-green-500/20 px-3 sm:px-4 py-2 rounded-full mb-2">
+                        <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <span class="elegant-font text-white text-xs sm:text-sm font-medium">Teaching Financial Freedom</span>
+                    </div>
+                    <div class="inline-flex items-center space-x-2 bg-blue-500/20 px-3 sm:px-4 py-2 rounded-full mb-2" dir="rtl">
+                        <span class="persian-font text-white text-xs sm:text-sm font-medium">آموزش آزادی مالی</span>
+                        <div class="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                    </div>
+                    <div class="inline-flex items-center space-x-2 bg-purple-500/20 px-3 sm:px-4 py-2 rounded-full" dir="rtl">
+                        <span class="persian-font text-white text-xs sm:text-sm font-medium">د مالي آزادۍ زده کړه</span>
+                        <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                    </div>
+                </div>
+
+                <!-- Social Links Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+                    
+                    <!-- Website -->
+                    <div class="social-card rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 slide-in h-32 sm:h-36 md:h-40 lg:h-48 xl:h-52" style="animation-delay: 0.3s;" onclick="handleClick('Website')">
+                        <div class="flex items-center space-x-3 sm:space-x-4 h-full">
+                            <div class="icon-glow w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 website-gradient rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0 flex flex-col justify-center">
+                                <h3 class="brand-font text-white font-bold text-base sm:text-lg mb-2">Website</h3>
+                                <p class="elegant-font text-white text-sm leading-tight mb-1">Free Courses & Resources</p>
+                                <p class="persian-font text-white text-sm leading-tight mb-1" dir="rtl">دوره‌های رایگان و منابع</p>
+                                <p class="persian-font text-white text-sm leading-tight" dir="rtl">وړیا کورسونه او سرچینې</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram -->
+                    <div class="social-card rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 slide-in h-32 sm:h-36 md:h-40 lg:h-48 xl:h-52" style="animation-delay: 0.4s;" onclick="handleClick('Instagram')">
+                        <div class="flex items-center space-x-3 sm:space-x-4 h-full">
+                            <div class="icon-glow w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 instagram-gradient rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0 flex flex-col justify-center">
+                                <h3 class="brand-font text-white font-bold text-base sm:text-lg mb-2">Instagram</h3>
+                                <p class="elegant-font text-white text-sm leading-tight mb-1">Daily Money Tips</p>
+                                <p class="persian-font text-white text-sm leading-tight mb-1" dir="rtl">نکات روزانه پول</p>
+                                <p class="persian-font text-white text-sm leading-tight" dir="rtl">ورځنۍ د پیسو لارښوونې</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TikTok -->
+                    <div class="social-card rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 slide-in h-32 sm:h-36 md:h-40 lg:h-48 xl:h-52" style="animation-delay: 0.5s;" onclick="handleClick('TikTok')">
+                        <div class="flex items-center space-x-3 sm:space-x-4 h-full">
+                            <div class="icon-glow w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 tiktok-gradient rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0 flex flex-col justify-center">
+                                <h3 class="brand-font text-white font-bold text-base sm:text-lg mb-2">TikTok</h3>
+                                <p class="elegant-font text-white text-sm leading-tight mb-1">Quick Money Tutorials</p>
+                                <p class="persian-font text-white text-sm leading-tight mb-1" dir="rtl">آموزش سریع پول</p>
+                                <p class="persian-font text-white text-sm leading-tight" dir="rtl">ګړندي د پیسو زده کړې</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- YouTube -->
+                    <div class="social-card rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 slide-in h-32 sm:h-36 md:h-40 lg:h-48 xl:h-52" style="animation-delay: 0.6s;" onclick="handleClick('YouTube')">
+                        <div class="flex items-center space-x-3 sm:space-x-4 h-full">
+                            <div class="icon-glow w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 youtube-gradient rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0 flex flex-col justify-center">
+                                <h3 class="brand-font text-white font-bold text-base sm:text-lg mb-2">YouTube</h3>
+                                <p class="elegant-font text-white text-sm leading-tight mb-1">Earning Strategies</p>
+                                <p class="persian-font text-white text-sm leading-tight mb-1" dir="rtl">استراتژی‌های درآمد</p>
+                                <p class="persian-font text-white text-sm leading-tight" dir="rtl">د عاید ستراتیژۍ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facebook -->
+                    <div class="social-card rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 slide-in h-32 sm:h-36 md:h-40 lg:h-48 xl:h-52" style="animation-delay: 0.7s;" onclick="handleClick('Facebook')">
+                        <div class="flex items-center space-x-3 sm:space-x-4 h-full">
+                            <div class="icon-glow w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 facebook-gradient rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0 flex flex-col justify-center">
+                                <h3 class="brand-font text-white font-bold text-base sm:text-lg mb-2">Facebook</h3>
+                                <p class="elegant-font text-white text-sm leading-tight mb-1">Join Community</p>
+                                <p class="persian-font text-white text-sm leading-tight mb-1" dir="rtl">به جامعه بپیوندید</p>
+                                <p class="persian-font text-white text-sm leading-tight" dir="rtl">ټولنې سره یوځای شئ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Telegram -->
+                    <div class="social-card rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 slide-in h-32 sm:h-36 md:h-40 lg:h-48 xl:h-52" style="animation-delay: 0.8s;" onclick="handleClick('Telegram')">
+                        <div class="flex items-center space-x-3 sm:space-x-4 h-full">
+                            <div class="icon-glow w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 telegram-gradient rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                </svg>
+                            </div>
+                            <div class="flex-1 min-w-0 flex flex-col justify-center">
+                                <h3 class="brand-font text-white font-bold text-base sm:text-lg mb-2">Telegram</h3>
+                                <p class="elegant-font text-white text-sm leading-tight mb-1">Exclusive Alerts</p>
+                                <p class="persian-font text-white text-sm leading-tight mb-1" dir="rtl">هشدارهای اختصاصی</p>
+                                <p class="persian-font text-white text-sm leading-tight" dir="rtl">ځانګړي خبرتیاوې</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="text-center mt-6 sm:mt-8 slide-in" style="animation-delay: 0.9s;">
+                    <p class="text-white text-xs sm:text-sm px-2 mb-1">© 2024 Tawana Learning • Empowering Financial Freedom 🚀</p>
+                    <p class="persian-font text-white text-xs px-2 mb-1" dir="rtl">© ۲۰۲۴ آموزش توانا • تقویت آزادی مالی 🚀</p>
+                    <p class="persian-font text-white text-xs px-2" dir="rtl">© ۲۰۲۴ د توانا زده کړې • د مالي آزادۍ پیاوړتیا 🚀</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thank You Page Overlay -->
+    <div id="thankYouPage" class="fixed inset-0 bg-gradient-to-br from-black via-red-600 to-green-600 z-50 hidden overflow-y-auto">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4 py-8">
+            <div class="max-w-2xl w-full text-center">
+                <!-- Thank You Card -->
+                <div class="bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                    <!-- Close Button -->
+                    <button onclick="closeThankYouPage()" class="absolute top-6 right-6 text-white/70 hover:text-white text-2xl">×</button>
+                    
+                    <!-- Animated Icon -->
+                    <div class="mb-8">
+                        <div id="thankYouIcon" class="w-24 h-24 mx-auto rounded-full flex items-center justify-center text-4xl mb-4 animate-bounce">
+                            🎉
+                        </div>
+                    </div>
+                    
+                    <!-- Thank You Message -->
+                    <h1 id="thankYouTitle" class="heading-font text-2xl sm:text-3xl font-bold text-white mb-2 text-glow">
+                        Thank You! 🙏
+                    </h1>
+                    <h2 id="thankYouTitleDari" class="persian-heading text-xl sm:text-2xl font-bold text-white/90 mb-2 text-glow" dir="rtl">
+                        از شما متشکریم! 🙏
+                    </h2>
+                    <h3 id="thankYouTitlePashto" class="persian-heading text-lg sm:text-xl font-bold text-white/85 mb-4 text-glow" dir="rtl">
+                        ستاسو څخه مننه! 🙏
+                    </h3>
+                    
+                    <p id="thankYouMessage" class="text-lg text-white mb-2 leading-relaxed">
+                        Thanks for visiting our page!
+                    </p>
+                    <p id="thankYouMessageDari" class="persian-font text-base text-white mb-2 leading-relaxed" dir="rtl">
+                        از بازدید صفحه ما متشکریم!
+                    </p>
+                    <p id="thankYouMessagePashto" class="persian-font text-sm text-white mb-6 leading-relaxed" dir="rtl">
+                        زموږ د پاڼې د لیدنې مننه!
+                    </p>
+                    
+                    <!-- Support Message -->
+                    <div class="bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-2xl p-6 mb-8">
+                        <h3 class="brand-font text-white font-bold text-lg mb-1">💰 Support Tawana Learning</h3>
+                        <h4 class="persian-heading text-white font-semibold text-base mb-1" dir="rtl">💰 از آموزش توانا حمایت کنید</h4>
+                        <h5 class="persian-heading text-white font-medium text-sm mb-3" dir="rtl">💰 د توانا زده کړو ملاتړ وکړئ</h5>
+                        <p id="supportMessage" class="text-white text-sm sm:text-base mb-2">
+                            Please support us to continue providing free financial education!
+                        </p>
+                        <p id="supportMessageDari" class="persian-font text-white text-xs sm:text-sm mb-1" dir="rtl">
+                            لطفاً از ما حمایت کنید تا به ارائه آموزش مالی رایگان ادامه دهیم!
+                        </p>
+                        <p id="supportMessagePashto" class="persian-font text-white text-xs" dir="rtl">
+                            مهرباني وکړئ زموږ ملاتړ وکړئ ترڅو د وړیا مالي زده کړې چمتو کولو ته دوام ورکړو!
+                        </p>
+                    </div>
+                    
+                    <!-- Countdown and Button -->
+                    <div class="space-y-6">
+                        <div class="text-white text-sm">
+                            Redirecting in <span id="countdown" class="text-yellow-400 font-bold">15</span> seconds...
+                        </div>
+                        
+                        <button id="continueBtn" onclick="continueToPlatform()" class="bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-2xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            Continue Now 🚀
+                        </button>
+                        
+                        <button onclick="closeThankYouPage()" class="block mx-auto text-white hover:text-white text-sm underline">
+                            Back to Links
+                        </button>
+                    </div>
+                    
+                    <!-- Team Signature -->
+                    <div class="mt-8 pt-6 border-t border-white/20">
+                        <p class="text-white text-sm mb-1">
+                            With love from the <span class="text-yellow-400 font-semibold">Tawana Learning Team</span> 💝
+                        </p>
+                        <p class="persian-font text-white text-xs mb-1" dir="rtl">
+                            با عشق از تیم <span class="text-yellow-400 font-semibold">آموزش توانا</span> 💝
+                        </p>
+                        <p class="persian-font text-white text-xs" dir="rtl">
+                            د <span class="text-yellow-400 font-semibold">توانا زده کړو ټیم</span> څخه د مینې سره 💝
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPlatform = '';
+        let countdownTimer = null;
+        
+        const platformData = {
+            'Website': {
+                title: 'Thanks for Visiting Our Website! 🎓',
+                titleDari: 'از بازدید وبسایت ما متشکریم! 🎓',
+                titlePashto: 'زموږ د ویب پاڼې د لیدنې مننه! 🎓',
+                message: 'You\'re about to explore our free courses and resources that will help you start your money-making journey!',
+                messageDari: 'شما در حال کاوش دوره‌ها و منابع رایگان ما هستید که به شما کمک می‌کند سفر کسب درآمد خود را شروع کنید!',
+                messagePashto: 'تاسو د خپل د پیسو کمولو سفر پیل کولو لپاره زموږ وړیا کورسونه او سرچینې لیدل غواړئ!',
+                support: 'Bookmark our website and share it with friends who want to learn how to make money online!',
+                supportDari: 'وبسایت ما را نشانه‌گذاری کنید و با دوستانی که می‌خواهند آنلاین پول درآوردن یاد بگیرند، به اشتراک بگذارید!',
+                supportPashto: 'زموږ ویب پاڼه بک مارک کړئ او د هغو ملګرو سره یې شریک کړئ چې غواړي آنلاین پیسې وګټي!',
+                icon: '💻',
+                gradient: 'from-purple-500 to-blue-600',
+                url: 'https://www.burntonic.com'
+            },
+            'Instagram': {
+                title: 'Thanks for Checking Out Our Instagram! 📸',
+                titleDari: 'از بازدید اینستاگرام ما متشکریم! 📸',
+                titlePashto: 'زموږ د انسټاګرام د لیدنې مننه! 📸',
+                message: 'You\'re about to see our daily money-making tips, success stories, and behind-the-scenes content!',
+                messageDari: 'شما در حال مشاهده نکات روزانه کسب درآمد، داستان‌های موفقیت و محتوای پشت صحنه ما هستید!',
+                messagePashto: 'تاسو زموږ ورځنۍ د پیسو کمولو لارښوونې، د بریالیتوب کیسې او د پردې شاته مینځپانګې لیدل غواړئ!',
+                support: 'Please follow us, like our posts, and share our content with your friends who want to earn money!',
+                supportDari: 'لطفاً ما را دنبال کنید، پست‌هایمان را لایک کنید و محتوای ما را با دوستانی که می‌خواهند پول درآوردن، به اشتراک بگذارید!',
+                supportPashto: 'مهرباني وکړئ موږ تعقیب کړئ، زموږ پوسټونه خوښ کړئ، او زموږ مینځپانګې د هغو ملګرو سره شریک کړئ چې پیسې غواړي!',
+                icon: '❤️',
+                gradient: 'from-pink-500 to-purple-600',
+                url: '#' // Will be updated with actual URL
+            },
+            'TikTok': {
+                title: 'Thanks for Visiting Our TikTok! 🎵',
+                titleDari: 'از بازدید تیک‌تاک ما متشکریم! 🎵',
+                titlePashto: 'زموږ د ټیک ټاک د لیدنې مننه! 🎵',
+                message: 'You\'re about to watch quick and easy money-making tutorials that you can start today!',
+                messageDari: 'شما در حال تماشای آموزش‌های سریع و آسان کسب درآمد هستید که امروز می‌توانید شروع کنید!',
+                messagePashto: 'تاسو د پیسو کمولو ګړندي او اسانه زده کړې لیدل غواړئ چې نن یې پیل کولی شئ!',
+                support: 'Please follow us, like our videos, and share them with friends who need extra income!',
+                supportDari: 'لطفاً ما را دنبال کنید، ویدیوهایمان را لایک کنید و با دوستانی که به درآمد اضافی نیاز دارند، به اشتراک بگذارید!',
+                supportPashto: 'مهرباني وکړئ موږ تعقیب کړئ، زموږ ویډیوګانې خوښ کړئ، او د هغو ملګرو سره یې شریک کړئ چې اضافي عاید ته اړتیا لري!',
+                icon: '👍',
+                gradient: 'from-black to-red-600',
+                url: 'https://www.tiktok.com/@tawanalearning?_t=ZN-8zXPmxEShkc&_r=1'
+            },
+            'YouTube': {
+                title: 'Thanks for Visiting Our YouTube! 📺',
+                titleDari: 'از بازدید یوتیوب ما متشکریم! 📺',
+                titlePashto: 'زموږ د یوټیوب د لیدنې مننه! 📺',
+                message: 'You\'re about to watch detailed earning strategies and step-by-step tutorials!',
+                messageDari: 'شما در حال تماشای استراتژی‌های تفصیلی درآمد و آموزش‌های گام به گام هستید!',
+                messagePashto: 'تاسو د عاید تفصیلي ستراتیژۍ او د ګام په ګام زده کړې لیدل غواړئ!',
+                support: 'Please subscribe to our channel, like our videos, and hit the notification bell for new content!',
+                supportDari: 'لطفاً کانال ما را سابسکرایب کنید، ویدیوهایمان را لایک کنید و برای محتوای جدید زنگ اعلان را فعال کنید!',
+                supportPashto: 'مهرباني وکړئ زموږ چینل ګډون وکړئ، زموږ ویډیوګانې خوښ کړئ، او د نوي مینځپانګې لپاره د خبرتیا زنګ ووهئ!',
+                icon: '🔔',
+                gradient: 'from-red-500 to-red-700',
+                url: '#' // Will be updated with actual URL
+            },
+            'Facebook': {
+                title: 'Thanks for Checking Out Our Facebook! 👥',
+                titleDari: 'از بازدید فیسبوک ما متشکریم! 👥',
+                titlePashto: 'زموږ د فیسبوک د لیدنې مننه! 👥',
+                message: 'You\'re about to join our community of people learning to make money online!',
+                messageDari: 'شما در حال پیوستن به جامعه ما از افرادی که یادگیری کسب درآمد آنلاین می‌کنند، هستید!',
+                messagePashto: 'تاسو زموږ د هغو خلکو ټولنې سره یوځای کیدل غواړئ چې آنلاین د پیسو کمولو زده کړه کوي!',
+                support: 'Please like our page, join our community discussions, and share with friends who want to earn!',
+                supportDari: 'لطفاً صفحه ما را لایک کنید، در بحث‌های جامعه ما شرکت کنید و با دوستانی که می‌خواهند درآمد کسب کنند، به اشتراک بگذارید!',
+                supportPashto: 'مهرباني وکړئ زموږ پاڼه خوښ کړئ، زموږ د ټولنې بحثونو کې ګډون وکړئ، او د هغو ملګرو سره شریک کړئ چې عاید غواړي!',
+                icon: '🤝',
+                gradient: 'from-blue-500 to-blue-700',
+                url: '#' // Will be updated with actual URL
+            },
+            'Telegram': {
+                title: 'Thanks for Visiting Our Telegram! 💬',
+                titleDari: 'از بازدید تلگرام ما متشکریم! 💬',
+                titlePashto: 'زموږ د ټلیګرام د لیدنې مننه! 💬',
+                message: 'You\'re about to get exclusive earning alerts, tips, and opportunities delivered directly to you!',
+                messageDari: 'شما در حال دریافت هشدارهای اختصاصی درآمد، نکات و فرصت‌هایی که مستقیماً به شما ارسال می‌شود، هستید!',
+                messagePashto: 'تاسو ځانګړي د عاید خبرتیاوې، لارښوونې، او فرصتونه مستقیم ترلاسه کول غواړئ!',
+                support: 'Please join our channel, share it with friends, and turn on notifications for exclusive alerts!',
+                supportDari: 'لطفاً به کانال ما بپیوندید، آن را با دوستان به اشتراک بگذارید و اعلان‌ها را برای هشدارهای اختصاصی فعال کنید!',
+                supportPashto: 'مهرباني وکړئ زموږ چینل کې ګډون وکړئ، د ملګرو سره یې شریک کړئ، او د ځانګړو خبرتیاوو لپاره اطلاعیې فعالې کړئ!',
+                icon: '⚡',
+                gradient: 'from-blue-400 to-blue-600',
+                url: 'https://t.me/tawanafree'
+            }
+        };
+
+        function handleClick(platform) {
+            // Add click animation
+            event.currentTarget.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                event.currentTarget.style.transform = '';
+            }, 150);
+
+            // Show thank you page
+            showThankYouPage(platform);
+        }
+
+        function showThankYouPage(platform) {
+            currentPlatform = platform;
+            const data = platformData[platform];
+            
+            // Update content
+            document.getElementById('thankYouTitle').textContent = data.title;
+            document.getElementById('thankYouTitleDari').textContent = data.titleDari;
+            document.getElementById('thankYouTitlePashto').textContent = data.titlePashto;
+            document.getElementById('thankYouMessage').textContent = data.message;
+            document.getElementById('thankYouMessageDari').textContent = data.messageDari;
+            document.getElementById('thankYouMessagePashto').textContent = data.messagePashto;
+            document.getElementById('supportMessage').textContent = data.support;
+            document.getElementById('supportMessageDari').textContent = data.supportDari;
+            document.getElementById('supportMessagePashto').textContent = data.supportPashto;
+            document.getElementById('thankYouIcon').textContent = data.icon;
+            document.getElementById('thankYouIcon').className = `w-24 h-24 mx-auto bg-gradient-to-r ${data.gradient} rounded-full flex items-center justify-center text-4xl mb-4 animate-bounce shadow-2xl`;
+            
+            // Show the page
+            document.getElementById('thankYouPage').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            
+            // Start countdown
+            startCountdown();
+        }
+
+        function startCountdown() {
+            let seconds = 15;
+            const countdownElement = document.getElementById('countdown');
+            
+            countdownTimer = setInterval(() => {
+                seconds--;
+                countdownElement.textContent = seconds;
+                
+                if (seconds <= 0) {
+                    clearInterval(countdownTimer);
+                    continueToPlatform();
+                }
+            }, 1000);
+        }
+
+        function continueToPlatform() {
+            if (countdownTimer) {
+                clearInterval(countdownTimer);
+            }
+            
+            const data = platformData[currentPlatform];
+            if (data && data.url && data.url !== '#') {
+                // Open the social media link in a new tab
+                window.open(data.url, '_blank');
+            } else {
+                alert(`${currentPlatform} link coming soon!`);
+            }
+            
+            closeThankYouPage();
+        }
+
+        function closeThankYouPage() {
+            if (countdownTimer) {
+                clearInterval(countdownTimer);
+            }
+            
+            document.getElementById('thankYouPage').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            
+            // Reset countdown
+            document.getElementById('countdown').textContent = '15';
+        }
+
+        // Add some interactive sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'fixed pointer-events-none z-20';
+            sparkle.style.left = Math.random() * window.innerWidth + 'px';
+            sparkle.style.top = Math.random() * window.innerHeight + 'px';
+            sparkle.innerHTML = '✨';
+            sparkle.style.animation = 'float 3s ease-in-out forwards';
+            sparkle.style.opacity = '0.7';
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+
+        // Create sparkles periodically
+        setInterval(createSparkle, 2000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97b9b32264285524',t:'MTc1NzI4NDc0MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
